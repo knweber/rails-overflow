@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  get 'questions/index'
 
   resources :users, except: :index do
     resources  :questions
@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
   resources :answers, except: [:index, :show]
 
-  root 'home#index'
+  root 'questions#index'
 end
