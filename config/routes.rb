@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   post '/questions/:question_id/answers', to: 'answers#create'
 
-  get 'questions/index'
+# MICROCHALLENGE
+  # get 'questions/index', to: 'questions#index'
+  # get 'questions/new', to: 'questions#new'
+  # post 'questions', to: 'questions#create'
+  # get 'questions/:id', to: 'questions#show'
 
   resources :users, except: :index do
     resources  :questions
