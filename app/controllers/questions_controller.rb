@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      render 'home/index'
+      render 'questions/index'
     else
 
     end
