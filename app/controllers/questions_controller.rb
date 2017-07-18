@@ -17,4 +17,8 @@ class QuestionsController < ApplicationController
       render 'questions/new'
     end
   end
+
+  def show
+    @question = Question.find(params[:id]) 
+  end
 end

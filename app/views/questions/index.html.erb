@@ -1,9 +1,18 @@
 <h1>Rails Overflow</h1>
 
-<% @questions.each do |question| %>
-  <h2><%= question.prompt %></h2>
-  <%= question.description %>
+<table>
+  <tr>
+    <th>Prompt</th>
+    <th>Description</th>
+  </tr>
+  <% @questions.each do |question| %>
+  <tr>
+    <td><%= question.prompt %></td>
+    <td><%= question.description %></td>
+    <td><%= link_to 'Show', question_path(question) %></td>
+  </tr>
 <% end %>
+</table>
 <div>
   <%= link_to 'Log In', login_path  %>
   <%= link_to 'Sign Up', new_user_path %>

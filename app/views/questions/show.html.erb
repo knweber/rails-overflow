@@ -1,0 +1,10 @@
+<h2><%= @question.prompt %> </h2>
+<p>
+  <%= @question.description %>
+</p>
+<%= form_for(:answer, url: new_question_answer_path) do |f| %>
+  <%= f.text_field :body %>
+  <%= f.hidden_field :question_id, value: @question.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit 'Submit an Answer' %>
+<% end %>
